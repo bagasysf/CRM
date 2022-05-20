@@ -35,13 +35,14 @@
 </head>
 
 <body>
-    <div class="grid grid-cols-12 gap-3 py-3 | md:gap-5 md:py-5" x-data="{ open: false }">
-        <div class="flex col-span-2 justify-center items-center | lg:col-span-1">
-            <span class="font-semibold"></span>
+    <div class="grid grid-cols-12 gap-3 p-3 border-2 | md:gap-5 md:py-5" x-data="{ open: false }">
+        <div class="flex col-span-3 justify-center items-center | md:col-span-2 | lg:col-span-1">
+            <div class="flex items-center w-16 h-14 rounded-xl border-2">
+            </div>
         </div>
-        <div class="flex col-span-8 space-x-3 | lg:col-span-2">
+        <div class="flex col-span-7 space-x-3 | md:col-span-8 | lg:col-span-2">
             <div class="flex flex-col space-y-1">
-                <span class="font-semibold lg:text-[24px]">CRM Scorecard</span>
+                <span class="font-semibold | md:text-[20px] | lg:text-[24px]">CRM Scorecard</span>
                 <div class="flex space-x-3 text-sm">
                     <span>Jun - 2021</span>
                     <span>Thailand</span>
@@ -54,125 +55,130 @@
         </button>
         <!-- Filter Desktop -->
         <div class="hidden | md:gap-7 | lg:flex lg:col-span-8 lg:gap-5">
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">Country</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="Thailand" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-50">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="Thailand" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <div class="absolute pt-14 w-full border-stone-200 bg-transparent z-40" x-show="open">
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
                     <ul class="text-gray-400 border-2">
-                        <li><a href="#" class="flex bg-white px-1">Indonesia</a></li>
-                        <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                        <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">Date</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="Current Month" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-50">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="Current Month" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <!-- <div class="absolute pt-14 w-full border-stone-200 z-40" x-show="open">
-                        <ul class="text-gray-400 border-2">
-                            <li><a href="" class="flex bg-white px-1">Indonesia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
-                        </ul>
-                    </div> -->
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
+                    <ul class="text-gray-400 border-2">
+                        <li><a href="" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">Reachabilty</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="All" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-30">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="All" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <!-- <div class="absolute pt-14 w-full border-stone-200 z-20" x-show="open">
-                        <ul class="text-gray-400 border-2">
-                            <li><a href="" class="flex bg-white px-1">Indonesia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
-                        </ul>
-                    </div> -->
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
+                    <ul class="text-gray-400 border-2">
+                        <li><a href="" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">Tourist</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="All" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-30">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="All" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <!-- <div class="absolute pt-14 w-full border-stone-200 z-20" x-show="open">
-                        <ul class="text-gray-400 border-2">
-                            <li><a href="" class="flex bg-white px-1">Indonesia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
-                        </ul>
-                    </div> -->
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
+                    <ul class="text-gray-400 border-2">
+                        <li><a href="" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">Axis/Franchise</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="All" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-10">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="All" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <!-- <div class="absolute pt-14 w-full border-stone-200" x-show="open">
-                        <ul class="text-gray-400 border-2">
-                            <li><a href="" class="flex bg-white px-1">Indonesia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
-                        </ul>
-                    </div> -->
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
+                    <ul class="text-gray-400 border-2">
+                        <li><a href="" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+            <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                 <span class="font-semibold">€/LC</span>
-                <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                    <input type="text" disabled placeholder="€" class="w-full px-1">
-                    <button x-on:click="open = ! open" class="z-10">
+                <div class="flex justify-start items-center border-2 border-stone-200">
+                    <input type="text" disabled placeholder="€" class="w-full px-3 py-2">
+                    <button x-on:click="open = ! open" class="z-20">
                         <i data-feather="chevron-down"></i>
                     </button>
                 </div>
-                <!-- <div class="absolute pt-14 w-full border-stone-200" x-show="open">
-                        <ul class="text-gray-400 border-2">
-                            <li><a href="" class="flex bg-white px-1">Indonesia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Malaysia</a></li>
-                            <li><a href="#" class="flex bg-white px-1">Thailand</a></li>
-                        </ul>
-                    </div> -->
+                <div class="absolute pt-[70px] w-full border-stone-200 z-10" x-show="open">
+                    <ul class="text-gray-400 border-2">
+                        <li><a href="" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                        <li><a href="#" class="flex bg-white px-3 py-2 hover:bg-gray-100">Lorem, ipsum.</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Flag Desktop -->
         <div class="hidden | lg:flex lg:col-span-1 lg:justify-center lg:items-center">
-            <span class="rounded-full w-6 h-6"></span>
+            <div class="flex rounded-full w-12 h-12 border-2 overflow-hidden">
+                <img src="./images/thailand-flag.png" alt="">
+            </div>
         </div>
-        <!-- Filter Mobile -->
+        <!-- Navbar Mobile -->
         <div class="absolute h-screen w-screen top-0 right-0 bg-white z-10" x-show="open">
             <div class="fixed bg-white h-screen w-screen">
-                <div class="grid grid-cols-12 gap-3 py-3 | md:gap-5 md:py-5">
-                    <div class="flex col-span-2 justify-center items-center">
-                        <span class="font-semibold"></span>
+                <div class="grid grid-cols-12 gap-3 p-3 border-2 | md:gap-5 md:py-5">
+                    <div class="flex col-span-3 justify-center items-center | md:col-span-2">
+                        <div class="font-semibold w-16 h-14 rounded-xl border-2"></div>
                     </div>
-                    <div class="flex col-span-6 space-x-3 | lg:col-span-2">
+                    <div class="flex col-span-5 space-x-3 | md:col-span-7 |lg:col-span-2">
                         <div class="flex flex-col space-y-1">
-                            <span class="font-semibold">CRM Scorecard</span>
+                            <span class="font-semibold | md:text-[20px] | lg:text-[24px]">CRM Scorecard</span>
                             <div class="flex space-x-3 text-sm">
                                 <span>Jun - 2021</span>
                                 <span>Thailand</span>
                             </div>
                         </div>
                     </div>
-                    <div class="flex col-span-2 justify-center items-center">
-                        <span class="rounded-full w-6 h-6"></span>
+                    <!-- Flag Mobile -->
+                    <div class="flex col-span-2 md:col-span-1 | justify-center items-center">
+                        <span class="flex rounded-full w-8 h-8 overflow-hidden">
+                            <img src="./images/thailand-flag.png" alt="">
+                        </span>
                     </div>
                     <button class="flex col-span-2 justify-center items-center" x-on:click="open = ! open">
                         <i data-feather="x" class="w-auto | md:h-7"></i>
@@ -180,99 +186,100 @@
                 </div>
                 <!-- Filter Mobile -->
                 <div class="grid grid-cols-2 gap-5 px-6 py-6 | md:gap-7 md:px-8 md:py-8">
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                         <span class="font-semibold">Country</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="Thailand" class="w-full px-1">
+                            <input type="text" placeholder="Thailand" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-50">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200 bg-transparent z-40" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 bg-transparent z-40 text-sm"
+                            x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                         <span class="font-semibold">Date</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="Current Month" class="w-full px-1">
+                            <input type="text" placeholder="Current Month" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-50">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200 z-40" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 z-40 text-sm" x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                         <span class="font-semibold">Reachabilty</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="All" class="w-full px-1">
+                            <input type="text" placeholder="All" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-30">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200 z-20" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 z-20 text-sm" x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                         <span class="font-semibold">Tourist</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="All" class="w-full px-1">
+                            <input type="text" placeholder="All" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-30">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200 z-20" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 z-20 text-sm" x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
                         <span class="font-semibold">Axis/Franchise</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="All" class="w-full px-1">
+                            <input type="text" placeholder="All" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-10">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 text-sm" x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }">
-                        <span class="font-semibold">E/LC</span>
+                    <div class="relative flex flex-col space-y-1" x-data="{ open: false }" @click.away="open = false">
+                        <span class="font-semibold">€/LC</span>
                         <div class="flex justify-start items-center text-sm border-2 border-stone-200">
-                            <input type="text" placeholder="E" class="w-full px-1">
+                            <input type="text" placeholder="€" class="w-full px-3 py-2">
                             <button x-on:click="open = ! open" class="z-10">
                                 <i data-feather="chevron-down"></i>
                             </button>
                         </div>
-                        <div class="absolute pt-14 w-full border-stone-200" x-show="open">
+                        <div class="absolute pt-[66px] w-full border-stone-200 text-sm" x-show="open">
                             <ul class="text-gray-400 border-2">
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
-                                <li><a href="#" class="flex bg-white px-1">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
+                                <li><a href="#" class="flex bg-white px-3 py-2">Lorem, ipsum.</a></li>
                             </ul>
                         </div>
                     </div>
@@ -282,7 +289,7 @@
         </div>
     </div>
 
-    <div class="flex flex-col | md:grid md:grid-cols-2 md:grid-rows-10 | lg:grid-cols-4 lg:grid-rows-5 lg:gap-5">
+    <div class="flex flex-col py-3 | md:grid md:grid-cols-2 md:grid-rows-10 | lg:grid-cols-4 lg:grid-rows-5 lg:gap-5">
         <div class="flex flex-col space-y-1 py-5">
             <div class="flex m-auto px-5 pt-5 -mb-5 lg:pt-0">
                 <div class="absolute bg-white rounded-lg border-2">
@@ -387,7 +394,14 @@
         <div
             class="flex -order-6 lg:order-none justify-center flex-col col-span-2 row-span-3 items-center text-[24px] lg:text-[32px] font-semibold space-y-5 py-5">
             <span>My Customer Profile</span>
-            <span class="h-48 w-48 lg:h-80 lg:w-80 rounded-full border-2"></span>
+            <span class="flex h-48 w-48 lg:h-80 lg:w-80 rounded-full border-2 overflow-hidden">
+                <img src="./images/user.jpg" alt="">
+            </span>
+            <span class="text-xs text-center px-24">Illustrator by <a href='https://www.freepik.com/vectors/user-avatar'
+                    class="font-light">User
+                    avatar
+                    vector created by
+                    pikisuperstar - www.freepik.com</a></span>
         </div>
         <div class="flex flex-col space-y-1 py-5">
             <div class="flex m-auto px-5 pt-5 -mb-5 lg:pt-0">
@@ -508,7 +522,6 @@
                         <p class="text-[24px] font-semibold">(Blank)</p>
                         <span>Cross-Chanel</span>
                     </div>
-                    <div class="flex flex-col justify-center text-sm font-semibold">€</div>
                     <div class="flex flex-col justify-center text-sm">
                         <span class="text-xs"><span class="font-semibold">(Blank)</span> VS LM</span>
                         <span class="text-xs"><span class="font-semibold">(Blank)</span> VS LY</span>
@@ -516,7 +529,7 @@
                 </div>
             </div>
             <div class="flex justify-center text-xs">
-                <span class="truncate px-10 h-[1rem]"></span>
+                <span class="truncate px-10">Customer who bought in store and online in the last 12M</span>
             </div>
         </div>
         <div class="flex flex-col space-y-1 py-5">
@@ -530,7 +543,6 @@
                         <p class="text-[24px] font-semibold">(Blank)</p>
                         <span>Customer Online</span>
                     </div>
-                    <div class="flex flex-col justify-center text-sm font-semibold">€</div>
                     <div class="flex flex-col justify-center text-sm">
                         <span class="text-xs"><span class="font-semibold">(Blank)</span> VS LM</span>
                         <span class="text-xs"><span class="font-semibold">(Blank)</span> VS LY</span>
@@ -538,11 +550,52 @@
                 </div>
             </div>
             <div class="flex justify-center text-xs">
-                <span class="truncate px-10 h-[1rem]"></span>
+                <span class="truncate px-10">Customer who bought online in thelast 12M</span>
             </div>
         </div>
-        <div>Customer Offline</div>
-        <div>Avg Turnover</div>
+        <div class="flex flex-col space-y-1 py-5">
+            <div class="flex m-auto px-5 pt-5 -mb-5 lg:pt-0">
+                <div class="absolute bg-white rounded-lg border-2">
+                    <i data-feather="home" class="w-12 h-auto p-2"></i>
+                </div>
+                <div class="flex justify-center items-center w-64 gap-2 my-7 px-2 py-5 text-center rounded-lg border-2">
+                    <div class="flex"></div>
+                    <div class="flex flex-col">
+                        <p class="text-[24px] font-semibold">(Blank)</p>
+                        <span>Customer Offline</span>
+                    </div>
+                    <div class="flex flex-col justify-center text-sm">
+                        <span class="text-xs"><span class="text-red-300 font-semibold">-5.29%</span> VS LM</span>
+                        <span class="text-xs"><span class="text-red-300 font-semibold">-8.51%</span> VS LY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center text-xs">
+                <span class="truncate px-10">Customer who bought in store in thelast 12M</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-1 py-5">
+            <div class="flex m-auto px-5 pt-5 -mb-5 lg:pt-0">
+                <div class="absolute bg-white rounded-lg border-2">
+                    <i data-feather="database" class="w-12 h-auto p-2"></i>
+                </div>
+                <div class="flex justify-center items-center w-64 gap-2 my-7 px-2 py-5 text-center rounded-lg border-2">
+                    <div class="flex"></div>
+                    <div class="flex flex-col">
+                        <p class="text-[24px] font-semibold">567.3</p>
+                        <span>Avg Turnover</span>
+                    </div>
+                    <div class="flex flex-col justify-center text-sm font-semibold">€</div>
+                    <div class="flex flex-col justify-center text-sm">
+                        <span class="text-xs"><span class="text-red-300 font-semibold">-1.56%</span> VS LM</span>
+                        <span class="text-xs"><span class="text-red-300 font-semibold">-16.05%</span> VS LY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center text-xs">
+                <span class="truncate px-10">Average spending customers in thelast 12M</span>
+            </div>
+        </div>
     </div>
 </body>
 <script>
